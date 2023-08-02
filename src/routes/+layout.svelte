@@ -12,14 +12,11 @@
 	import { onDestroy, onMount } from 'svelte';
 	import { invalidateAll } from '$app/navigation';
 
-
 	let ptValue = '';
 	let projects = [];
 	const unsubscribe = personalToken.subscribe(async (value) => {
-			ptValue = value;
-			
-	}
-	);
+		ptValue = value;
+	});
 
 	onDestroy(() => {
 		unsubscribe();
@@ -61,7 +58,7 @@
 				<a href="/" class="text-2xl uppercase">Azion Visual Builder</a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<a
+				<!-- <a
 					class="btn btn-sm {$personalToken === ''
 						? 'variant-ghost-surface'
 						: 'variant-filled'} mx-4"
@@ -70,7 +67,7 @@
 					on:click={() => modalStore.trigger(modal)}
 				>
 					Personal Token {ptValue.toString()}
-				</a>
+				</a> -->
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>

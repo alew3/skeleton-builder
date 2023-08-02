@@ -21,14 +21,15 @@ export async function getEdgeDomains(token) {
 		throw new Error('Failed to fetch data for Edge Domains: ');
 	}
 	let results = await res.json();
+	//console.log(results["results"]);
 	return results["results"];
 }
 
-export async function getEdgeDomainsById(token,id) {
+export async function getEdgeDomainsById(token, id) {
 	const res = await fetch(`https://api.azionapi.net/domains/${id}`, {
 		headers: {
 			Accept: 'application/json; version=3',
-			Authorization: `Token ${$token}`
+			Authorization: `Token ${token}`
 		}
 	});
 	if (!res.ok) {
@@ -38,7 +39,7 @@ export async function getEdgeDomainsById(token,id) {
 	return results["results"];
 }
 
-export async function getEdgeApplicationById(token,id) {
+export async function getEdgeApplicationById(token, id) {
 	const res = await fetch(`https://api.azionapi.net/edge_applications/${id}`, {
 		headers: {
 			Accept: 'application/json; version=3',
@@ -46,14 +47,14 @@ export async function getEdgeApplicationById(token,id) {
 		}
 	});
 	if (!res.ok) {
-		throw new Error(`Failed to fetch data for Edge Application: ${id}`);
+		throw new Error(`Failed to fetch data for Edge Application: ${id}  ${res.errors}`);
 	}
 	let results = await res.json();
-	return	results["results"];
+	return results["results"];
 }
 
 
-export async function getEdgeApplicationCacheSettingsById(token,id) {
+export async function getEdgeApplicationCacheSettingsById(token, id) {
 	const res = await fetch(`https://api.azionapi.net/edge_applications/${id}/cache_settings?order_by=name&sort=asc&page=1&page_size=100`, {
 		headers: {
 			Accept: 'application/json; version=3',
@@ -67,11 +68,11 @@ export async function getEdgeApplicationCacheSettingsById(token,id) {
 	return results["results"];
 }
 
-export async function getEdgeApplicationDeviceGroupsById(id) {
-	const res = await fetch(`https://api.azionapi.net/edge_applications/${id}/device_groups?order_by=name&sort=asc&page=1&page_size=100`, {
+export async function getEdgeApplicationDeviceGroupsById(token, id) {
+	const res = await fetch(`https://api.azionapi.net/edge_applications/${id}/device_groups`, {
 		headers: {
 			Accept: 'application/json; version=3',
-			Authorization: `Token ${token}}`
+			Authorization: `Token ${token}`
 		}
 	});
 	if (!res.ok) {
@@ -81,7 +82,7 @@ export async function getEdgeApplicationDeviceGroupsById(id) {
 	return results["results"];
 }
 
-export async function getEdgeApplicationFunctionInstancesById(token,id) {
+export async function getEdgeApplicationFunctionInstancesById(token, id) {
 	const res = await fetch(`https://api.azionapi.net/edge_applications/${id}/functions_instances?order_by=name&sort=asc&page=1&page_size=100&filter=name`, {
 		headers: {
 			Accept: 'application/json; version=3',
@@ -95,7 +96,7 @@ export async function getEdgeApplicationFunctionInstancesById(token,id) {
 	return results["results"];
 }
 
-export async function getEdgeApplicationOriginsById(token,id) {
+export async function getEdgeApplicationOriginsById(token, id) {
 	const res = await fetch(`https://api.azionapi.net/edge_applications/${id}/origins?order_by=name&sort=asc&page=1&page_size=10`, {
 		headers: {
 			Accept: 'application/json; version=3',
@@ -110,7 +111,7 @@ export async function getEdgeApplicationOriginsById(token,id) {
 }
 
 
-export async function getEdgeApplicationRulesEngineById(token,id,phase) {
+export async function getEdgeApplicationRulesEngineById(token, id, phase) {
 	const res = await fetch(`https://api.azionapi.net/edge_applications/${id}/rules_engine/${phase}/rules?order_by=order&sort=asc&page=1&page_size=10`, {
 		headers: {
 			Accept: 'application/json; version=3',
@@ -124,7 +125,7 @@ export async function getEdgeApplicationRulesEngineById(token,id,phase) {
 	return results["results"];
 }
 
-export async function getEdgeFireWallById(token,id) {
+export async function getEdgeFireWallById(token, id) {
 	const res = await fetch(`https://api.azionapi.net/edge_firewall/${id}`, {
 		headers: {
 			Accept: 'application/json; version=3',
@@ -135,10 +136,10 @@ export async function getEdgeFireWallById(token,id) {
 		throw new Error(`Failed to fetch data for Edge Firewall: ${id}`);
 	}
 	let results = await res.json();
-	return	results["results"];
+	return results["results"];
 }
 
-export async function getEdgeFireWallRulesEngineById(token,id) {
+export async function getEdgeFireWallRulesEngineById(token, id) {
 	const res = await fetch(`https://api.azionapi.net/edge_firewall/${id}/rules_engine?order_by=order&sort=asc&page=1&page_size=100`, {
 		headers: {
 			Accept: 'application/json; version=3',
@@ -149,10 +150,10 @@ export async function getEdgeFireWallRulesEngineById(token,id) {
 		throw new Error(`Failed to fetch data for Edge Firewall Rules Engine: ${id}`);
 	}
 	let results = await res.json();
-	return	results["results"];
+	return results["results"];
 }
 
-export async function getEdgeFireWallFunctionInstancesById(token,id) {
+export async function getEdgeFireWallFunctionInstancesById(token, id) {
 	const res = await fetch(`https://api.azionapi.net/edge_firewall/${id}/functions_instances?order_by=name&sort=asc&page=1&page_size=10`, {
 		headers: {
 			Accept: 'application/json; version=3',
@@ -163,12 +164,12 @@ export async function getEdgeFireWallFunctionInstancesById(token,id) {
 		throw new Error(`Failed to fetch data for Edge Firewall Function Instances: ${id}`);
 	}
 	let results = await res.json();
-	return	results["results"];
+	return results["results"];
 }
 
 
 
-export async function getCertificateById(token,id) {
+export async function getCertificateById(token, id) {
 	const res = await fetch(`https://api.azionapi.net/digital_certificates/${id}`, {
 		headers: {
 			Accept: 'application/json; version=3',

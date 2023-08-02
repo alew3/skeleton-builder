@@ -2,20 +2,13 @@
 
 import { PT } from '$env/static/private';
 
-
-
-// import {personalToken} from '$lib/stores';
-// import { get } from 'svelte/store';
 import { getEdgeDomains } from '$lib/server/data.js';
 
 export async function load({ params, depends, cookies, request }) {
-    // console.log("token from store: " + get(personalToken));
-    //throw redirect("/", 302")
-    // console.log("request to page load",request);
-    //depends('domains:list');
-    let token = cookies.get('token');
 
-    token = PT;
+    let token = PT;
+    console.log("params", params)
+    let domainData = await fetch(`/api/domain/${params.domainId}`)
 
     //console.log("Token from store: " + token);
 

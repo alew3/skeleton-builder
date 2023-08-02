@@ -1,3 +1,14 @@
+Better protected routs
+https://www.youtube.com/watch?v=ieECVME5ZLU
+
+source
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa0ZKVzdSa0NqMW5jaUdRWkdFM2lQYm1qcGFBd3xBQ3Jtc0trRzR0TmNvTjZDWmVBMlZ1VnZQRV8yWDZHM3RPcGpXSkJabDhmeE1xb193b3hLQkVMX0hJQVJnSG90YzRMRDJWRzJqSlZWNTBaZFNDMjZtcXUyZ1dTMDB4ODgycWtwdTVGTW1haUJuYWp4WVExcHlCMA&q=https%3A%2F%2Fgithub.com%2Fhuntabyte%2Fbetter-redirects&v=ieECVME5ZLU 
+
+
+
+
+
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
