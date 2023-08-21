@@ -9,7 +9,6 @@
 	import { tableMapperValues } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
 	let isFocused = true;
-
 	const sourceData = data.domainList;
 
 	onMount(() => {});
@@ -27,6 +26,7 @@
 
 	function mySelectionHandler(event: CustomEvent) {
 		console.log(event.detail);
+		console.log('lets go!');
 		goto(`/view/${event.detail[0]}`);
 	}
 </script>

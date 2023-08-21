@@ -4,11 +4,59 @@
 
 html,
 body {
-	@apply h-full overflow-hidden;
+    @apply h-full overflow-hidden;
 }
 
 :root {
     --theme-font-family-base: 'Roboto', sans-serif;
     --theme-font-family-heading: 'Roboto', sans-serif;
     /* ... */
+}
+
+.node-heading {
+    display: flex;
+    justify-content: center;
+    background-color: orangered;
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.nodeWrapper {
+    box-sizing: border-box;
+    width: fit-content;
+    border-radius: 8px;
+    height: fit-content;
+    position: relative;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 1px;
+    gap: 10px;
+}
+
+
+.node-container {
+    width: 400px;
+}
+
+.node-table {
+    background-color: black;
+}
+
+.node-table td {
+    width: 70px;
+    margin: 0px;
+    padding: 10px;
+    color: #fff;
+    justify-content: space-evenly;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+.node-table td:last-child {
+    border-right: none;
 }

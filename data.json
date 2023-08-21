@@ -1,0 +1,54 @@
+{
+    id: 1662032541,
+    name: 'teste',
+    cnames: [ 'ale.com'
+    ],
+    cname_access_only: false,
+    digital_certificate_id: 31806,
+    edge_application_id: 1662036328,
+    is_active: true,
+    domain_name: 'miwxrz14v2.map.azionedge.net',
+    is_mtls_enabled: false,
+    mtls_verification: 'enforce',
+    mtls_trusted_ca_certificate_id: null,
+    edge_application: {
+      id: 1662036328,
+      name: 'teste',
+      delivery_protocol: 'http,https',
+      http_port: [
+            80
+        ],
+      https_port: [
+            443
+        ],
+      minimum_tls_version: '',
+      active: true,
+      debug_rules: false,
+      http3: false,
+      supported_ciphers: 'all',
+      application_acceleration: false,
+      caching: true,
+      device_detection: false,
+      edge_firewall: false,
+      edge_functions: true,
+      image_optimization: false,
+      l2_caching: false,
+      load_balancer: false,
+      raw_logs: false,
+      web_application_firewall: false,
+      cache_settings: [],
+      device_groups: [],
+      function_instances: [
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ]
+        ],
+      origins: [],
+      rules_engine: { request: [Array
+            ], response: []
+        }
+    }
+}

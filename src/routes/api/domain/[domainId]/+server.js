@@ -14,9 +14,9 @@ export async function GET({ request, params }) {
     let domain = await getEdgeDomainsById(token, domainId);
 
     let certificate = null;
-    if (domain.certificate !== undefined && domain.certificate !== null) {
+    if (domain.digital_certificate_id !== undefined && domain.digital_certificate_id !== null) {
         // get certificate details
-        certificate = await getCertificateById(domain.certificate.id);
+        certificate = await getCertificateById(token, domain.digital_certificate_id);
         domain.digital_certificate = certificate;
     }
 
